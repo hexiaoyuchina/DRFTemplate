@@ -1,0 +1,65 @@
+# -*- coding:utf-8 -*-
+from django.shortcuts import render
+from rest_framework import viewsets, mixins
+from rest_framework.decorators import action
+from api.drfmixins import SerializerDataMixin
+from service.DouBanService import DoubanService
+from api.serializers import CreateSerializer, ListSerializer, RetriveSerializer, UpdateSerializer, DeleteSerializer
+from api.models import DouBan
+
+# Create your views here.
+
+
+class HxyViewSets(SerializerDataMixin, mixins.CreateModelMixin, viewsets.GenericViewSet):
+
+    def get_queryset(self):
+        return DouBan.objects.all()
+
+    def get_serializer_class(self):
+        if self.action == 'create':
+            return CreateSerializer
+        elif self.action == 'retrieve':
+            return RetriveSerializer
+        elif self.action == 'list':
+            return ListSerializer
+        elif self.action == 'update':
+            return UpdateSerializer
+        elif self.action == 'delete':
+            return DeleteSerializer
+
+    def create(self, request, *args, **kwargs):
+        serializer_data = self.get_serializer_data(request)
+        action = DoubanService(**serializer_data)
+        res = action.create()
+        return self.drf_json_success_response(res)
+
+    def retrieve(self, request, *args, **kwargs):
+        douban = self.get_object()
+        serializer = self.get_serializer(douban)
+        serializer_data = serializer.data
+        return self.drf_json_success_response(serializer_data)
+    #http://127.0.0.1:8000/api/hxy/?pageNumber=1&pageSize=20
+    def list(self, request, *args, **kwargs):
+        queryset = self.filter_queryset(self.get_queryset())
+        page = self.paginate_queryset(queryset)
+        if page is not None:
+            serializer = self.get_serializer(page, many=True)
+            return self.get_paginated_response(serializer.data)
+
+        serializer = self.get_serializer(queryset, many=True)
+
+        return self.drf_json_success_response(serializer.data)
+    # http://127.0.0.1:8000/api/hxy/15/
+    def update(self, request, *args, **kwargs):
+        serializer_data = self.get_serializer_data(request)
+        action = DoubanService(**serializer_data)
+        res = action.update()
+        return self.drf_json_success_response(res)
+
+    @action(methods=['POST'], detail=False, url_path='delete')
+    def delete(self, request, *args, **kwargs):
+        serilizer_data = self.get_serializer_data(request)
+        action = DoubanService(**serilizer_data)
+        res = action.delete()
+        return self.drf_json_success_response(res)
+
