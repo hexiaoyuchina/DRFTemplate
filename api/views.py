@@ -15,7 +15,7 @@ class HxyViewSets(SerializerDataMixin, mixins.CreateModelMixin, viewsets.Generic
     def get_queryset(self):
         return DouBan.objects.all()
 
-    def get_serializer_class(self):
+    def get_serializer_class(self):  # 默认使用self.serializer_class,如果实现这个方法，调用这个方法
         if self.action == 'create':
             return CreateSerializer
         elif self.action == 'retrieve':
@@ -38,6 +38,10 @@ class HxyViewSets(SerializerDataMixin, mixins.CreateModelMixin, viewsets.Generic
         serializer = self.get_serializer(douban)
         serializer_data = serializer.data
         return self.drf_json_success_response(serializer_data)
+    # @action(metods=['POST'], url_path='my_detail')
+    # def my_detail(self, request):
+    #     pass
+
     #http://127.0.0.1:8000/api/hxy/?pageNumber=1&pageSize=20
     def list(self, request, *args, **kwargs):
         queryset = self.filter_queryset(self.get_queryset())
