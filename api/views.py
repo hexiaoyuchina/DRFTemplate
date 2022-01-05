@@ -32,7 +32,7 @@ class HxyViewSets(SerializerDataMixin, mixins.CreateModelMixin, viewsets.Generic
         action = DoubanService(**serializer_data)
         res = action.create()
         return self.drf_json_success_response(res)
-
+    #http://127.0.0.1:8000/api/hxy/{id}
     def retrieve(self, request, *args, **kwargs):
         douban = self.get_object()
         serializer = self.get_serializer(douban)
@@ -53,6 +53,7 @@ class HxyViewSets(SerializerDataMixin, mixins.CreateModelMixin, viewsets.Generic
         serializer = self.get_serializer(queryset, many=True)
 
         return self.drf_json_success_response(serializer.data)
+    
     # http://127.0.0.1:8000/api/hxy/15/
     def update(self, request, *args, **kwargs):
         serializer_data = self.get_serializer_data(request)
