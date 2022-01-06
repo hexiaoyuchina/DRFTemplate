@@ -18,3 +18,10 @@ class DouBan(models.Model):
     class Meta:
         db_table = 'douban'
         managed = False
+
+    @property
+    def country_cn(self):
+        if self.country == 'china':
+            return "中国"
+        elif self.country == 'america':
+            return "美国"

@@ -18,7 +18,7 @@ class RetriveSerializer(serializers.ModelSerializer):
 class ListSerializer(serializers.ModelSerializer):
     class Meta:
         model = DouBan
-        fields = ('title', 'rating_num', 'votes', 'move_type', 'country', 'time', 'director', 'actor')
+        fields = ('title', 'rating_num', 'votes', 'move_type', 'country', 'country_cn', 'time', 'director', 'actor')
 
 
 class UpdateSerializer(serializers.Serializer):
