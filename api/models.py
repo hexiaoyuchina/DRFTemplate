@@ -6,6 +6,7 @@ from django.db import models
 
 class DouBan(models.Model):
     id = models.IntegerField(primary_key=True)
+    uuid = models.CharField(max_length=64, default='', help_text="uuid")
     title = models.CharField(max_length=255, default='', help_text="标题")
     rating_num = models.CharField(max_length=255, default='', help_text='评分')
     votes = models.CharField(max_length=255, default='', help_text='投票人数')

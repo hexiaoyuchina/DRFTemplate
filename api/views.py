@@ -11,6 +11,7 @@ from api.filter import douban_search
 
 
 class HxyViewSets(SerializerDataMixin, mixins.CreateModelMixin, viewsets.GenericViewSet):
+    lookup_field = 'uuid'
 
     def get_queryset(self):
         return DouBan.objects.all()
