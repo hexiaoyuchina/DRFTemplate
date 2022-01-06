@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c3a442c5-3951-4c8d-b8ac-e431312419c8" name="Default Changelist" comment="">
+    <list default="true" id="c3a442c5-3951-4c8d-b8ac-e431312419c8" name="Default Changelist" comment="数据更新适配自定义的uuid字段">
+      <change afterPath="$PROJECT_DIR$/utils/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/logs/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/logs/filter.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/logs/log_kit.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/learndrf/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/learndrf/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/DouBanService.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/DouBanService.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -79,7 +82,7 @@
       <workItem from="1640843436026" duration="445000" />
       <workItem from="1640844268564" duration="25363000" />
       <workItem from="1641266455471" duration="4146000" />
-      <workItem from="1641439220394" duration="6497000" />
+      <workItem from="1641439220394" duration="11125000" />
     </task>
     <task id="LOCAL-00001" summary="说明">
       <created>1640938838136</created>
@@ -109,7 +112,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641459716827</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="数据更新适配自定义的uuid字段">
+      <created>1641461073694</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1641461073694</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -120,49 +130,50 @@
     <MESSAGE value="列表页支持查询" />
     <MESSAGE value="序列化自定义数据" />
     <MESSAGE value="url的数据默认是pk,改成自定义的字段，lookup_fileds" />
-    <option name="LAST_COMMIT_MESSAGE" value="url的数据默认是pk,改成自定义的字段，lookup_fileds" />
+    <MESSAGE value="数据更新适配自定义的uuid字段" />
+    <option name="LAST_COMMIT_MESSAGE" value="数据更新适配自定义的uuid字段" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="489" y="51" key="CommitChangelistDialog2" timestamp="1641459715504">
+    <state x="489" y="51" key="CommitChangelistDialog2" timestamp="1641465469989">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="489" y="51" key="CommitChangelistDialog2/-1366.0.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1641459715504" />
+    <state x="489" y="51" key="CommitChangelistDialog2/-1366.0.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1641465469989" />
     <state x="689" y="223" key="FileChooserDialogImpl" timestamp="1640843520704">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="689" y="223" key="FileChooserDialogImpl/-1366.0.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1640843520704" />
-    <state width="1867" height="339" key="GridCell.Tab.0.bottom" timestamp="1641459014665">
+    <state width="1867" height="339" key="GridCell.Tab.0.bottom" timestamp="1641464040522">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1867" height="339" key="GridCell.Tab.0.bottom/-1366.0.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1641459014665" />
-    <state width="1867" height="339" key="GridCell.Tab.0.center" timestamp="1641459014665">
+    <state width="1867" height="339" key="GridCell.Tab.0.bottom/-1366.0.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1641464040522" />
+    <state width="1867" height="339" key="GridCell.Tab.0.center" timestamp="1641464040522">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1867" height="339" key="GridCell.Tab.0.center/-1366.0.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1641459014665" />
-    <state width="1867" height="339" key="GridCell.Tab.0.left" timestamp="1641459014665">
+    <state width="1867" height="339" key="GridCell.Tab.0.center/-1366.0.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1641464040522" />
+    <state width="1867" height="339" key="GridCell.Tab.0.left" timestamp="1641464040522">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1867" height="339" key="GridCell.Tab.0.left/-1366.0.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1641459014665" />
-    <state width="1867" height="339" key="GridCell.Tab.0.right" timestamp="1641459014665">
+    <state width="1867" height="339" key="GridCell.Tab.0.left/-1366.0.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1641464040522" />
+    <state width="1867" height="339" key="GridCell.Tab.0.right" timestamp="1641464040522">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1867" height="339" key="GridCell.Tab.0.right/-1366.0.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1641459014665" />
-    <state width="1867" height="339" key="GridCell.Tab.1.bottom" timestamp="1641459014666">
+    <state width="1867" height="339" key="GridCell.Tab.0.right/-1366.0.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1641464040522" />
+    <state width="1867" height="339" key="GridCell.Tab.1.bottom" timestamp="1641464040523">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1867" height="339" key="GridCell.Tab.1.bottom/-1366.0.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1641459014666" />
-    <state width="1867" height="339" key="GridCell.Tab.1.center" timestamp="1641459014666">
+    <state width="1867" height="339" key="GridCell.Tab.1.bottom/-1366.0.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1641464040523" />
+    <state width="1867" height="339" key="GridCell.Tab.1.center" timestamp="1641464040523">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1867" height="339" key="GridCell.Tab.1.center/-1366.0.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1641459014666" />
-    <state width="1867" height="339" key="GridCell.Tab.1.left" timestamp="1641459014666">
+    <state width="1867" height="339" key="GridCell.Tab.1.center/-1366.0.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1641464040523" />
+    <state width="1867" height="339" key="GridCell.Tab.1.left" timestamp="1641464040523">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1867" height="339" key="GridCell.Tab.1.left/-1366.0.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1641459014666" />
-    <state width="1867" height="339" key="GridCell.Tab.1.right" timestamp="1641459014666">
+    <state width="1867" height="339" key="GridCell.Tab.1.left/-1366.0.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1641464040523" />
+    <state width="1867" height="339" key="GridCell.Tab.1.right" timestamp="1641464040523">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1867" height="339" key="GridCell.Tab.1.right/-1366.0.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1641459014666" />
+    <state width="1867" height="339" key="GridCell.Tab.1.right/-1366.0.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1641464040523" />
     <state x="345" y="83" key="SettingsEditor" timestamp="1640843604445">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

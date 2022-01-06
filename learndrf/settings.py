@@ -126,3 +126,72 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+LOG_DIR = './logs/'
+
+LOOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    # 定义日志的格式化程序
+    'formatters': {
+        # 输出日志级别名称、日志信息，以及生成日志信息的时间、进程、线程和模块。
+        'verbose': {
+            'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(pathname)s %(lineno)s %(funcName)s %(message)s'
+        },
+        'simple': {
+            'format': '%(asctime)s %(filename)s[line:%(lineno)d %(funcName)s] - %(levelname)s: %(message)s'
+        },
+        'standard': {
+            'format': '[%(asctime)s] [%(levelname)s] [%(request_id)s] [%(name)s::%(lineno)d] >>>>>>>func: %(funcName)s : %(message)s'
+        },
+    },
+    'filter': {
+        'require_debug_true': {
+            '()': 'django.utils.logs.RequireDebugTrue',
+        },
+        'request_id': {  # 通过自定义类，在过滤器中添加额外的参数
+            '()': 'utils.logs.filter.RequestIDFilter'
+        }
+    },
+    # 定义处理器
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',  # 日志级别
+            'filters': ['request_id'],  # 过滤器
+            'class': 'logging.StreamHandler',  # 处理类
+            'formatter': 'standard',  # 选择格式化方式
+        },
+        'default': {
+            'level': 'DEBUG',
+            'calss': 'utils.logs.MyLoggerHandler',
+            'filters': ['request_id'],
+            'filename': os.path.join(LOG_DIR, 'debug.log'),
+            'when': 'MONTH',  # 文件一个月创建一个新文件
+            'backupCount': 365,
+            'formatter': 'standard'
+        },
+        'info': {
+                    'level': 'DEBUG',
+                    'calss': 'utils.logs.MyLoggerHandler',
+                    'filters': ['request_id'],
+                    'filename': os.path.join(LOG_DIR, 'debug.log'),
+                    'when': 'MONTH',  # 文件一个月创建一个新文件
+                    'backupCount': 365,
+                    'formatter': 'standard'
+                },
+    },
+    # 定义不同日志名的日志级别及对应的处理器
+    'loggers': {
+        '': {
+          'handlers': ['console'],
+          'level': 'DEBUG'
+        },
+        'douban': {
+            'handlers': ['info'],
+            'level': 'DEBUG',
+            'propagate': False,
+        }
+
+    }
+
+}

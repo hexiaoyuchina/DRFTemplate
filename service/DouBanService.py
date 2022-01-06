@@ -1,5 +1,7 @@
 # -*- coding:utf-8 -*-
+import logging
 from api.models import DouBan
+logger = logging.getLogger('info')
 
 
 class DoubanService(object):
@@ -16,7 +18,7 @@ class DoubanService(object):
         self.actor = kwargs.get('actor', '')
 
     def create(self):
-        DouBan.objects.create(rating_num=self.rating_num,
+        douban = DouBan.objects.create(rating_num=self.rating_num,
                                        title=self.title,
                                        votes=self.votes,
                                        move_type=self.move_type,
@@ -24,6 +26,7 @@ class DoubanService(object):
                                        time=self.time,
                                        director=self.director,
                                        actor=self.actor)
+        logger.info("create douban {} success".format(douban.uuid))
         return {"msg": "成功"}
 
     def update(self):
