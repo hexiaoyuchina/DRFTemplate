@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="c3a442c5-3951-4c8d-b8ac-e431312419c8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/DouBanService.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/DouBanService.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +79,7 @@
       <workItem from="1640843436026" duration="445000" />
       <workItem from="1640844268564" duration="25363000" />
       <workItem from="1641266455471" duration="4146000" />
-      <workItem from="1641439220394" duration="5659000" />
+      <workItem from="1641439220394" duration="6497000" />
     </task>
     <task id="LOCAL-00001" summary="说明">
       <created>1640938838136</created>
@@ -101,7 +102,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641459368448</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="url的数据默认是pk,改成自定义的字段，lookup_fileds">
+      <created>1641459716827</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1641459716827</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -111,13 +119,14 @@
     <MESSAGE value="说明" />
     <MESSAGE value="列表页支持查询" />
     <MESSAGE value="序列化自定义数据" />
-    <option name="LAST_COMMIT_MESSAGE" value="序列化自定义数据" />
+    <MESSAGE value="url的数据默认是pk,改成自定义的字段，lookup_fileds" />
+    <option name="LAST_COMMIT_MESSAGE" value="url的数据默认是pk,改成自定义的字段，lookup_fileds" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="489" y="51" key="CommitChangelistDialog2" timestamp="1641459366795">
+    <state x="489" y="51" key="CommitChangelistDialog2" timestamp="1641459715504">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="489" y="51" key="CommitChangelistDialog2/-1366.0.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1641459366795" />
+    <state x="489" y="51" key="CommitChangelistDialog2/-1366.0.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1641459715504" />
     <state x="689" y="223" key="FileChooserDialogImpl" timestamp="1640843520704">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -177,12 +186,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/api/views.py</url>
-          <line>63</line>
+          <line>64</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/api/views.py</url>
-          <line>64</line>
+          <line>65</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>

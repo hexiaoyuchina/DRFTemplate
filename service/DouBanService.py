@@ -5,6 +5,7 @@ from api.models import DouBan
 class DoubanService(object):
     def __init__(self, *args, **kwargs):
         self.id = kwargs.get('id')
+        self.uuid = kwargs.get('uuid')
         self.title = kwargs.get('title', '')
         self.rating_num = kwargs.get('rating_num', '')
         self.votes = kwargs.get('votes', '')

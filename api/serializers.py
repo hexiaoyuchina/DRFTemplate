@@ -22,7 +22,7 @@ class ListSerializer(serializers.ModelSerializer):
 
 
 class UpdateSerializer(serializers.Serializer):
-    id = serializers.IntegerField(required=True)
+    uuid = serializers.CharField(required=True)
     title = serializers.CharField(required=False,)
     rating_num = serializers.CharField(required=False)
     votes = serializers.CharField(required=False)
