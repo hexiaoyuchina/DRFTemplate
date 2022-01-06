@@ -6,7 +6,7 @@ from api.drfmixins import SerializerDataMixin
 from service.DouBanService import DoubanService
 from api.serializers import CreateSerializer, ListSerializer, RetriveSerializer, UpdateSerializer, DeleteSerializer
 from api.models import DouBan
-
+from api.filter import douban_search
 # Create your views here.
 
 
@@ -42,9 +42,13 @@ class HxyViewSets(SerializerDataMixin, mixins.CreateModelMixin, viewsets.Generic
     # def my_detail(self, request):
     #     pass
 
-    #http://127.0.0.1:8000/api/hxy/?pageNumber=1&pageSize=20
+    #http://127.0.0.1:8000/api/hxy/?pageNumber=1&pageSize=20&key="xx'
     def list(self, request, *args, **kwargs):
+        data = request.GET
+        search = data.get("key", None)
+
         queryset = self.filter_queryset(self.get_queryset())
+        queryset = douban_search(queryset, search)
         page = self.paginate_queryset(queryset)
         if page is not None:
             serializer = self.get_serializer(page, many=True)
@@ -53,7 +57,7 @@ class HxyViewSets(SerializerDataMixin, mixins.CreateModelMixin, viewsets.Generic
         serializer = self.get_serializer(queryset, many=True)
 
         return self.drf_json_success_response(serializer.data)
-    
+
     # http://127.0.0.1:8000/api/hxy/15/
     def update(self, request, *args, **kwargs):
         serializer_data = self.get_serializer_data(request)
